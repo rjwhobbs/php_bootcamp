@@ -2,8 +2,11 @@ body
 {
 	background-color: rgb(100, 100, 100);
 }
+
 .rcorners1 
 {
+	display: flex;
+	margin: 0px auto;
  	border-radius: 6px;
  	background: rgb(145, 145, 145);
  	padding: 5px;
@@ -11,9 +14,29 @@ body
 	height: 100px;
 	box-shadow: 10px 10px 5px black;
 }
+
+.banner
+{
+	flex: 1;
+}
+
+.mag-glass
+{
+	flex: 1;
+}
+
+.ref-ex 
+{
+	flex: 0.2;
+}
 .container 
 {
 	text-align: center;
+}
+
+ul
+{
+	list-style-type: none;
 }
 /*img
 {

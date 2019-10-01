@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Grids</title>
+  <style>
+	.wrapper
+	{
+		display:grid;
+		grid-template-columns: 70% 27% 3%;
+		margin: 0px auto;	
+		background: rgb(145, 145, 145);
+		width: 80%;
+		grid-auto-rows: 100px;
+		border-radius: 6px;
+		box-shadow: 10px 10px 5px black;
+	}
+
+	.banner
+	{
+		padding: 5px;
+	}
+
+	.m-glass
+	{
+		text-align: right;
+	}
+
+	.ref
+	{
+		display: grid;
+		padding: 2px;
+		grid-template-rows: 80% 20%
+
+	}
+
+	.main-wrapper
+	{
+		display:grid;
+		grid-template-columns: 13% 68% 13%;
+		width: 72%;
+		grid-gap:3%;
+	}
+	.main-wrapper > div{
+  		background: rgb(145, 145, 145);	
+		border-radius: 6px;
+		box-shadow: 10px 10px 5px black;
+
+    }
+    /*.main-wrapper > div:nth-child(odd){
+      background:#ddd;
+    }*/
+  </style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="banner">
+			<img style="width: 65%; height: 100%" src="../d00/ex02/resources/day_of_the_42.png" alt="Day of the 42 banner">
+		</div>
+			<div class="m-glass">
+				<img style="width: 90%; height: 115%;" src="../d00/ex02/resources/loupe.png">
+			</div>
+		<div class="ref">
+			<img style="width: 90%" src="../d00/ex02/resources/reload.png">
+			<img src="../d00/ex02/resources/close.gif">
+		</div>
+	</div>
+	<br>
+	<center>
+	<div class="main-wrapper">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	</center>
+</body>
+</html>
