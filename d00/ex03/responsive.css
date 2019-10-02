@@ -1,0 +1,40 @@
+body 
+{
+	background-color: rgb(240, 240, 240);
+}
+
+table 
+{
+	width: 100%;
+	padding: none;
+}
+
+tr 
+{
+	height: 3vw;
+}
+
+caption, td 
+{
+	font-family: Arial; 
+	padding: 1px; 
+	color: black;
+}
+
+table, th, td 
+{ 
+	border-collapse: collapse;
+	font-size: 1vw;
+}
+sup {font-size: .7vw; padding-left: 1px;}
+sub {font-size: .7vw; padding-right: 1px;}
+#c1 {background-color: lightblue;}
+#c2 {background-color: turquoise}
+#c3 {background-color: lightseagreen;}
+#c4 {background-color: lightcoral;}
+#c5 {background-color: lightgoldenrodyellow;}
+#c6 {background-color: lightgreen;}
+#c7 {background-color: lightsalmon;}
+#c8 {background-color: lightskyblue;}
+#c9 {background-color: linen;}
+#c10 {background-color: mediumaquamarine;}
