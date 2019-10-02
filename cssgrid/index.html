@@ -3,6 +3,11 @@
 <head>
   <title>CSS Grids</title>
   <style>
+	body
+	{
+		background-color: #505050;
+	}
+
 	.wrapper
 	{
 		display:grid;
@@ -37,7 +42,7 @@
 	{
 		display:grid;
 		grid-template-columns: 13% 68% 13%;
-		width: 72%;
+		width: 76%;
 		grid-gap:3%;
 	}
 	.main-wrapper > div{
@@ -76,6 +81,75 @@
  		grid-row: span 7;
 	}
 
+	.green-box
+	{
+		display: grid;
+		position: relative;
+		background-color: #88FF89;
+		margin-top: 1em;
+		margin-left: 6%;
+		width: 35%;
+		border-radius: 6px;
+		box-shadow: 10px 10px 5px black;
+
+	}
+
+	p
+	{
+		padding-top: 0;
+		position: relative;
+		padding-bottom: 2em;
+		padding-left: .5em; 
+		font-family: sans-serif;
+		font-size: .85em;
+	}
+
+	form
+	{
+		position: relative;
+		padding: 0;
+		margin-bottom: 0;
+		margin-top: -1em;
+	}
+	/*input
+	{
+		
+	}*/
+	
+	input
+	{
+		padding-right: 5px
+	}
+
+	input[type=text]
+	{
+		width: 80%;
+		box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0);
+
+	}
+
+	b
+	{
+		padding: 0;
+		font-family: 'Times New Roman';
+		font-size: 2.5em;
+		font-weight: 500;
+	}
+
+	button
+	{
+		position: relative;
+		background-color: rgb(230, 230, 230);
+		border-radius: 3px;
+		border: rgb(180, 180, 180) solid 1px;
+		
+	}
+	
+	ins
+	{
+		text-decoration-line: none;
+		text-shadow: 5px 5px 3px rgba(255, 0, 0, 0.8)
+	}
     /*.main-wrapper > div:nth-child(odd){
       background:#ddd;
     }*/
@@ -115,6 +189,15 @@
 			</div>
 		</div>
 	</div>
+	
 	</center>
+	<div class="green-box">
+		<form><p>Vous <b>entrez</b> alors dans une grande piece remplie<br>
+				d<ins>'ordinateurs</ins>...<br>
+				<i>- Bonjour, vous etes nouveau ici ?</i><br>
+				<input type="text">  <button type="button">Repondre</button>
+			</p>
+		</form>
+		</div>
 </body>
 </html>
