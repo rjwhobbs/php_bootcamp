@@ -9,4 +9,6 @@ if (isset($argc))
 		echo $trimmed . "\n";
 	}
 }
+else 
+	echo "argc and argv disabled\n";
 ?>
