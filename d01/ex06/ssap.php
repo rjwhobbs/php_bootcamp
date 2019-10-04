@@ -21,7 +21,8 @@ if (isset($argc))
 			$arr[] = $argv[$i];
 		$i++;
 	}
-	sort($arr);
+	if (isset($arr[0]))
+		sort($arr);
 	$i = 0;
 	while (isset($arr[$i]))
 	{
@@ -29,4 +30,7 @@ if (isset($argc))
 		$i++;
 	}
 }
+else 
+	echo "argc and argv disabled\n";
+?>
 ?>
