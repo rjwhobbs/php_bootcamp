@@ -15,6 +15,7 @@ if (isset($argc))
 				$arr[] = $temp[$k];
 			for ($k = 0; $k < $j; $k++)
 				unset ($temp[$k]);
+			unset($temp);
 			unset ($j);
 		}
 		else
@@ -32,5 +33,4 @@ if (isset($argc))
 }
 else 
 	echo "argc and argv disabled\n";
-?>
 ?>
