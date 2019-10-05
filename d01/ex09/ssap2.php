@@ -62,7 +62,7 @@ if (isset($argc))
 			$temp = array_values($arr);
 			$k = count($arr);
 			for ($l = 0; $l < $k; $l++)
-			unset($arr[$l]);
+				unset($arr[$l]);
 			unset($arr);
 			$arr = $temp;
 			$j--;
