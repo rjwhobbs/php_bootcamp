@@ -5,6 +5,7 @@ if (isset($argc))
 	$arr;
 	$temp;
 	$nums;
+	$nums_other;
 	$others;
 	$i = 1;
 	$j = 0;
@@ -46,6 +47,10 @@ if (isset($argc))
 			$arr = $temp;
 			$j--;
 		}
+		// else if (is_numeric($arr[$j][0]))
+		// {
+
+		// }
 		$j++;
 	}
 	// Remove strings with non alnum begining chars.
@@ -59,7 +64,7 @@ if (isset($argc))
 			$temp = array_values($arr);
 			$k = count($arr);
 			for ($l = 0; $l < $k; $l++)
-			unset($arr[$l]);
+				unset($arr[$l]);
 			unset($arr);
 			$arr = $temp;
 			$j--;
@@ -91,13 +96,5 @@ if (isset($argc))
 		foreach ($others as $value)
 			echo "$value\n";
 	}
-
-	// for ($i = 0; $i < count($arr); $i++)
-	// 	echo "$arr[$i]\n";
-	// if (ctype_alnum($arr[0]) === FALSE)
-	// 	echo "False";
-	// else
-	// 	echo "True";
-
 }
 ?>
