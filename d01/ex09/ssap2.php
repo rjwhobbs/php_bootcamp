@@ -37,19 +37,16 @@ if (isset($argc))
 			}
 			else
 				$nums[] = $arr[$j];
+			unset($arr[$j]);
+			$temp = array_values($arr);
+			$k = count($arr);
+			for ($l = 0; $l < $k; $l++)
+				unset($arr[$l]);
+			unset($arr);
+			$arr = $temp;
+			$j--;
 		}
 		$j++;
-	}
-	if (isset($nums[0]))
-	{
-		echo "XXXnumsXXX\n";
-		sort($nums);
-		$j = 0;
-		while (isset($nums[$j]))
-		{
-			echo "$nums[$j]\n";
-			$j++;
-		}
 	}
 	// Remove strings with non alnum begining chars.
 	$j = 0;
@@ -62,12 +59,30 @@ if (isset($argc))
 			$temp = array_values($arr);
 			$k = count($arr);
 			for ($l = 0; $l < $k; $l++)
-				unset($arr[$l]);
+			unset($arr[$l]);
 			unset($arr);
 			$arr = $temp;
 			$j--;
 		}
 		$j++;
+	}
+	if (isset($arr[0]))
+	{
+		echo "XXXstrinsXXX\n";
+		natcasesort($arr);
+		foreach ($arr as $value)
+			echo "$value\n";
+	}
+	if (isset($nums[0]))
+	{
+		echo "XXXnumsXXX\n";
+		sort($nums);
+		$j = 0;
+		while (isset($nums[$j]))
+		{
+			echo "$nums[$j]\n";
+			$j++;
+		}
 	}
 	if (isset($others[0]))
 	{
