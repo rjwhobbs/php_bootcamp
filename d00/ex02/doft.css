@@ -28,7 +28,8 @@ body
 .refresh-exit
 {
 	display: grid;
-	padding: 2px;
+	padding: 5px;
+	grid-template-columns: none;
 	grid-template-rows: 80% 20%
 
 }
