@@ -35,7 +35,7 @@ body
 
 .main-wrapper
 {
-	display:grid;
+	display: grid;
 	grid-template-columns: 13% 68% 13%;
 	width: 76%;
 	grid-gap:3%;
