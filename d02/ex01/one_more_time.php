@@ -4,37 +4,22 @@ function day_to_en($day)
 {
 	switch ($day)
 	{
-		case "lundi":
-		case "Lundi":
+		case strcasecmp($day, "lundi") == 0:
 			return "Monday";
-			break ;
-		case "Mardi":
-		case "mardi":
+		case strcasecmp($day, "Mardi") == 0:
 			return "Tuesday";
-			break ;
-		case "Mercredi": 
-		case "mercredi":
+		case strcasecmp($day, "Mercredi") == 0: 
 			return "Wednesday";
-			break ;
-		case "Jeudii": 
-		case "jeudii":
+		case strcasecmp($day, "Jeudii") == 0: 
 			return "Thursday";
-			break ;
-		case "Vendredi": 
-		case "vendredi":
+		case strcasecmp($day, "Vendredi") == 0: 
 			return "Friday";
-			break ;
-		case "Samedi": 
-		case "samedi":
+		case strcasecmp($day, "Samedi") == 0: 
 			return "Saturday";
-			break ;
-		case "Dimanche": 
-		case "dimanche":
+		case strcasecmp($day, "Dimanche") == 0: 
 			return "Sunday";
-			break ;
 		default:
 			return $day;
-			break ;
 	}	
 }
 
@@ -44,43 +29,31 @@ function month_to_en($month)
 	{
 		case strcasecmp($month, "Janvier") == 0:
 			return "January";
-			break ;
 		case strcasecmp($month, "Février") == 0:
 		case strcasecmp($month, "Fevrier") == 0:
 			return "Febuary";
-			break ;
 		case strcasecmp($month, "Mars") == 0:
 			return "March";
-			break ;
 		case strcasecmp($month, "Avril") == 0:
 			return "April";
-			break ;
 		case strcasecmp($month, "Mai") == 0:
 			return "May";
-			break ;
 		case strcasecmp($month, "Juin") == 0:
 			return "June";
-			break ;
 		case strcasecmp($month, "Juillet") == 0:
 			return "July";
-			break ;
 		case strcasecmp($month, "Août") == 0:
 		case strcasecmp($month, "Aout") == 0:
 			return "August";
-			break ;
 		case strcasecmp($month, "Septembre") == 0:
 			return "September";
-			break ;
 		case strcasecmp($month, "Octobre") == 0:
 			return "October";
-			break ;
 		case strcasecmp($month, "Novembre") == 0:
 			return "November";
-			break ;
 		case strcasecmp($month, "Décembre") == 0:
 		case strcasecmp($month, "Decembre") == 0:
 			return "December";
-			break ;
 		default:
 			return $month;
 	}
