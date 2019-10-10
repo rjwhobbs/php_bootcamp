@@ -26,17 +26,18 @@ function day_to_en($day)
 			break ;
 		case "Samedi": 
 		case "samedi":
-			return "Samedi";
+			return "Saturday";
 			break ;
 		case "Dimanche": 
 		case "dimanche":
-			return "Dimanche";
+			return "Sunday";
 			break ;
 		default:
 			return $day;
 			break ;
 	}	
 }
+
 function month_to_en($month)
 {
 	switch ($month)
@@ -84,12 +85,84 @@ function month_to_en($month)
 			return $month;
 	}
 }
-$input = "Mercredi 12 Novembre 2013 12:02:21";
-$fr_arr = preg_split("/[ ]/", $input, NULL, PREG_SPLIT_NO_EMPTY);
-$en_str = day_to_en($fr_arr[0])." $fr_arr[1]"." ".month_to_en($fr_arr[2])
-			." $fr_arr[3]"." $fr_arr[4]". " SAST";
-$time = DateTime::createFromFormat("D d M Y H:i:s e", $en_str);
-echo $time->format('U')."\n";
-//echo date("d m Y H:i:s", $time->format('U'));
-
+function time_format_test($time)
+{
+	$time_arr  = preg_split("/[:]/", $time, NULL, PREG_SPLIT_NO_EMPTY);
+	if (count($time_arr) != 3)
+	{
+		return 0;
+	}
+	else
+	{
+		if ($time_arr[0] < 0 || $time_arr[0] > 23)
+			return 0;
+		if ($time_arr[1] < 0 || $time_arr[1] > 59)
+			return 0;
+		if ($time_arr[2] < 0 || $time_arr[2] > 59)
+			return 0;
+	}
+	return 1;
+}
+if (isset($argc))
+{
+	if ($argc == 2)
+	{
+		$fr_arr = preg_split("/[\s]/", $argv[1], NULL, PREG_SPLIT_NO_EMPTY);
+		if (count($fr_arr) != 5)
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		$day = day_to_en($fr_arr[0]);
+		if (strcmp($day, $fr_arr[0]) == 0)
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		if (is_numeric($fr_arr[1]))
+		{
+			if ($fr_arr[1] < 1 || $fr_arr[1] > 31 || $fr_arr[1][0] == '+')
+			{
+				echo "Wrong Format\n";
+				exit ;	
+			}
+		}
+		else
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		$month = month_to_en($fr_arr[2]);
+		if (strcmp($month, $fr_arr[2]) == 0)
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		if (is_numeric($fr_arr[3]))
+		{
+			if ($fr_arr[3] < 1970 || $fr_arr[3] > 2069 || $fr_arr[3][0] == '+')
+			{
+				echo "Wrong Format\n";
+				exit ;	
+			}
+		}
+		else
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		if (time_format_test($fr_arr[4]) == 0)
+		{
+			echo "Wrong Format\n";
+			exit ;
+		}
+		$en_str = $day." $fr_arr[1]"." ".month_to_en($fr_arr[2])
+					." $fr_arr[3]"." $fr_arr[4]";
+		$time = DateTime::createFromFormat("D d M Y H:i:s", $en_str);
+		echo $time->format('U')."\n";
+		echo date("D d M Y H:i:s", $time->format('U'))."\n";
+	}
+}
+else
+	echo "argv has been disabled";
 ?>
