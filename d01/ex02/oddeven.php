@@ -21,5 +21,5 @@ while (1)
 	else
 		echo "'". $trim ."' is not a number\n";
 	fclose($f);
-};
+}
 ?>
