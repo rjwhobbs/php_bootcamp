@@ -22,8 +22,8 @@
 			<li><a href="#">About Us</a>
 				<div class="sub-menu-1">
 					<ul>
-						<li><a href="mission.html">Our Mission</a></li>
-						<li><a href="contactus.html">Contact Us</a></li>
+						<li><a href="mission.php">Our Mission</a></li>
+						<li><a href="contactus.php">Contact Us</a></li>
 					</ul>
 				</div>
 			</li>
@@ -33,43 +33,27 @@
 	<div class="products">
 			<div>
 				<div class="cookies-add-cart">
-					<div>
-						<img class="choc-chip" src="ChocChip.png">
-					</div>
-					<div>
-						<button>Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
-					</div>
+				<img class="choc-chip" src="ChocChip.png">
+				<button>Choc-chip Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
 				</div>
 			</div>
 			<div>
 				<div class="cookies-add-cart">
-					<div>
-						<img class="peanut-cookie" src="peanut.png">
-					</div>
-					<div>
-						<button>Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
-					</div>
+					<img class="peanut-cookie" src="peanut.png">
+					<button>Peanut Butter Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
 				</div>
 			</div>
 			<div>
 				<div class="cookies-add-cart">
-					<div>
-						<img class="short-bread" src="shortbread.png">
-					</div>
-					<div>
-						<button>Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
-					</div>
+					<img class="short-bread" src="shortbread.png">
+					<button>Shortbread Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
 				</div>
 			</div>
 			<div>
 				<div class="cookies-add-cart">
-					<div>
-						<img class="short-bread-choc" src="chocshortbread.png">
-					</div>
+					<img class="short-bread-choc" src="chocshortbread.png">
+					<button>Choc Shortbread Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
 				</div>
-					<div>
-						<button>Add<i class="fa fa-shopping-cart" style="font-size:24px;"></i>
-					</div>
 			</div>
 	</div>
 </body>
