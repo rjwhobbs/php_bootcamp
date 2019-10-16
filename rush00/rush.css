@@ -5,6 +5,13 @@ h1
 	font-size: 4em;
 }
 
+h2
+{
+	font-weight: 500;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
 body
 {
 	background-color: lightskyblue;
@@ -162,4 +169,12 @@ p
 	padding: 1em;
 	border-radius: 3px;
 	width: 50%;
+}
+
+.pfooter
+{
+	font-size: 1em;
+	padding: 0.5em;
+	border-radius: 3px;
+	width: 50%;	
 }
