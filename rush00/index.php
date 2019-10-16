@@ -7,15 +7,8 @@
 	<title>First We Biscuit</title>
 </head>
 <body><h1>But first, we biscuit...</h1>
-<!-- <div class="login-menu">
-	<div>Login</div>
-	<div>Register</div>
-	<div>Cart</div>
-</div><br> -->
 <div class="menu-bar">
 	<ul>
-		<!-- <li><a href="#">Biscuits</a></li> -->
-		<!-- <li><a href="#">Biscuit Recipes</a></li> -->
 		<li><a href="#">Login</a></li>
 		<li><a href="#">Register</a></li>
 		<li><a href="#">Cart</a></li>
