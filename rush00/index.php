@@ -22,8 +22,34 @@
 			</li>
 		</ul>
 	</div>
+<!--
+	require dbh.inc.php {conn to database} 	
+	require_once(file.php); // say error
+	include() //give warn
+	if (isset($_GET['error']))
+	{
+		switch ($_GET['error'])
+		{
+			"a" : echo fsdfg
+			:b:
+			default:
+				echo '<p class = err> ' . $_GET['error'] . </p>
+		}
+	}
+	'' success 
+	// new section
+	header("Location: placeiwant.php?error=Error Message")
+	
+	//cart 
+	$_SESSION['cart'][$_GET['add']]['quantity']++; // in add url send data $key
+	$_SESSION['cart'][$_GET['rem']]['quantity']--; // in rem url send data $key
+
+	-->
+
 	<br><br><br><br>
-	<div class="products">
+	<div class="products"> <!--form action="action_location.php method="post" $item = $_POST['cookiedata']
+							<input type= number / email / name="cookiedata" />
+							--> 
 		<div>
 			<div class="cookies-add-cart">
 				<img class="choc-chip" src="ChocChip.png">
