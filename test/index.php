@@ -6,8 +6,8 @@ if (mysqli_connect_error())
 // mysqli_query($link, $query);
 // "ALTER TABLE `users` ADD `name` TEXT NOT NULL AFTER `password`"; 
 $name = "S'pongy";
-//echo mysqli_real_escape_string($link, $name); 
-$query = "SELECT `email` FROM `users` WHERE `name` = ".mysqli_real_escape_string($link, $name);
+$name = mysqli_real_escape_string($link, $name); 
+$query = "SELECT * FROM `users`";
 if ($result = mysqli_query($link, $query))
 {
 	while ($row = mysqli_fetch_array($result))
