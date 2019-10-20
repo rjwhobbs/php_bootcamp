@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "test_root", "s55oQsBuoDvyr2HB", "test");
+$link = mysqli_connect("localhost", "test2", "XYfErbAQ8dAvrjKc", "test");
 if (mysqli_connect_error())
 	die ("Error");
 // $query = "UPDATE `users` SET `password` = 'x1234x' WHERE `email` = 'spongebod@gmail.com' LIMIT 1";
