@@ -1,9 +1,9 @@
 <?php
 $host		= 'localhost';
-$user		= 'test2';
-$passwd		= 'XYfErbAQ8dAvrjKc';
+$user		= 'test_root';
+$passwd		= 's55oQsBuoDvyr2HB';
 $db			= 'test';
-$dsn		= "mysql:host=$host;db=$db"; // After setting host use semi-colon
+$dsn		= "mysql:host=$host;dbname=$db"; // After setting host use semi-colon
 
 try
 {
@@ -16,21 +16,37 @@ catch (PDOException $e) // How does this work? is it an OOP thing?
 	echo "Connection Failed ".$e->getMessage();
 }
 
-var_dump($conn);
-try
-{
-	$stmt = $conn->query('SELECT * FROM test.prac');
-}
-catch(PDOException $e) 
-{
-	echo $e->getMessage();
-}
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-var_dump ($row);
-//print_r($row);
-// while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+$stmt = $conn->prepare("INSERT INTO `users` (`email`, `password`, `name`) Values (?, ?, ?)");
+$stmt->execute(['normalname@ah.com', 'stay', 'chill']);
+
+// $stmt = $conn->prepare("UPDATE `users` SET `email` = ? WHERE `name` = ?");
+// $stmt->execute(['biscuit@face.coockie', 'biscuit']);
+// try
 // {
-// 	print_r($row);
-//}
+// 	$stmt = $conn->prepare("INSERT INTO `users` (`email`,`password`, `name`) Values (?, ?, ?)");
+// 	$stmt->execute(["Joe@joe.joe", "joe", "joe"]);
+// 	$stmt = NULL;
+// 	echo "Added<br>";
+// }
+// catch (PDOException $e)
+// {
+// 	echo $e->getMessage();
+// }
+
+// try
+// {
+// 	$stmt = $conn->query('SELECT * FROM ``');
+// }
+// catch(PDOException $e) 
+// {
+// 	echo $e->getMessage();
+// }
+// $row = $stmt->fetch(PDO::FETCH_ASSOC);
+// var_dump ($row);
+// //print_r($row);
+// // while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+// // {
+// // 	print_r($row);
+// //}
 
 ?>
