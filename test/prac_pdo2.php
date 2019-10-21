@@ -3,7 +3,7 @@ $host		= 'localhost';
 $user		= 'test_root';
 $passwd		= 's55oQsBuoDvyr2HB';
 $db			= 'test';
-$dsn		= "mysql:host=$host"; // After setting host use semi-colon
+$dsn		= "mysql:host=$host"; 
 
 try
 {
