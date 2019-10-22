@@ -4,3 +4,4 @@ UPDATE `users` SET `name` = 'Pat' WHERE `users`.`id` = 2;
 SELECT * FROM `prac` ORDER BY `prac`.`created_at` DESC; 
 SELECT * FROM `prac` ORDER BY `prac`.`id` ASC ;
 UPDATE `prac` SET `is_published` = '0' WHERE `prac`.`id` = 2;
+INSERT INTO `prac` (`id`, `title`, `body`, `author`, `is_published`, `created_at`) VALUES (NULL, 'Post4', 'Blah blah bla', 'Max', '1', CURRENT_TIMESTAMP);
