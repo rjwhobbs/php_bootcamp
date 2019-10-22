@@ -1,30 +1,30 @@
 <?php
 $host		= 'localhost';
-$user		= 'test_root';
-$passwd		= 's55oQsBuoDvyr2HB';
+$user		= 'test2';
+$passwd		= 'XYfErbAQ8dAvrjKc';
 $db			= 'test';
 $dsn		= "mysql:host=$host;dbname=$db"; 
 
 try
 {
 	$conn = new PDO($dsn, $user, $passwd);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, 
-						PDO::ERRMODE_EXCEPTION,
-						PDO::ATTR_DEFAULT_FETCH_MODE,
+	$conn->setAttribute(PDO::ATTR_ERRMODE, 	
+						PDO::ERRMODE_EXCEPTION);
+	$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
 						PDO::FETCH_OBJ);
 	echo "Connected<br>";
-	$stmt = $conn->query("SELECT * FROM `users`");
+	$stmt = $conn->query("SELECT * FROM `prac`");
 	echo "Query commpleted<br>";
-	
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+	{
+		echo $row['title']."<br>";
+	}	
 }
-catch (PDOException $e) // How does this work? is it an OOP thing?
+catch (PDOException $e)
 {
 	echo $e->getMessage();
 }
-while ($row = $stmt->fetch())
-{
-	echo $row->email."<br>";
-}
+
 
 
 
