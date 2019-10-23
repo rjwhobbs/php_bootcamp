@@ -31,13 +31,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
 					$stmt = $conn->prepare($sql);
 					$stmt->execute([$username, $passwd, $email, $profile_pic_path]);
+					$_SESSION['message'] = 'Registration successful.'; 
 				}
 				catch (PDOExeption $e)
 				{
-					echo $e->getMessage();
+					$_SESSION['message'] = 'Sorry registration failed.';
 				}
 			}
+			else
+			{
+				$_SESSION['message'] = 'File upload failed.';
+			}
 		}
+		else
+		{
+			$_SESSION['message'] = 'Please only upload a valid image file.';
+		}
+	}
+	else
+	{
+		$_SESSION['message'] = 'Passwords do not match';
 	}
 }
 
