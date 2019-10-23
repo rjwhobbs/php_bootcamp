@@ -13,11 +13,31 @@ catch (PDOExeption $e)
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	if ($_POST['passwd'] == $_POST['confirm-pw'])
+	if ($_POST['passwd'] == $_POST['confirm-passwd'])
 	{
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$passwd = password_hash($_POST['passwd'], PASSWORD_BCRYPT);
+		$profile_pic_path = 'images/'.$_FILES['profile-pic']['name'];
+		if (preg_match("!image!", $_FILES['profile-pic']['type']))
+		{
+			if (copy($_FILES['profile-pic']['tmp_name'], $profile_pic_path))
+			{
+				$_SESSION['username'] = $username;
+				$_SESSION['profile-pic'] = $profile_pic_path;
+				$sql = 'INSERT INTO `users` (`username`, `passwd`, `email`, `profile-pic` ) 
+						VALUES (?, ?, ?, ?)';
+				try
+				{
+					$stmt = $conn->prepare($sql);
+					$stmt->execute([$username, $passwd, $email, $profile_pic_path]);
+				}
+				catch (PDOExeption $e)
+				{
+					echo $e->getMessage();
+				}
+			}
+		}
 	}
 }
 
@@ -32,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 </head>
 <body>
 	<h1>Create an account</h1>
-	<form action="form.php" method="POST" autocomplete="off">
+	<form action="form.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 		<div><?= $_SESSION['message'] ?></div>
 		<span>Username:</span><input type="text" placeholder="username" name="username" required/><br />
 		<span>Email:</span><input type="text" placeholder="email address" name="email" required/><br />
 		<span>Password:</span><input type="password" placeholder="password" name="passwd" required/><br />
-		<span>Confirm password:</span><input type="password" placeholder="confirm" name="confirm-pw" required/><br />
-		<label>Choose a profile pic</label><input type="file" name="prof-pic" accept="image/*" /><br />
+		<span>Confirm password:</span><input type="password" placeholder="confirm" name="confirm-passwd" required/><br />
+		<label>Choose a profile pic</label><input type="file" name="profile-pic" accept="image/*" /><br />
 		<input type="submit" name="submit" value="Register" />
 	</form>
 </body>
