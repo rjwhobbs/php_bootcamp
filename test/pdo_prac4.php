@@ -11,8 +11,8 @@ try
 	$conn = new PDO($dsn, $user, $passwd);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, 	
 						PDO::ERRMODE_EXCEPTION);
-	$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-						PDO::FETCH_OBJ);
+	// $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
+	// 					PDO::FETCH_OBJ);
 	echo "Connected<br>";
 	//$sql = 'INSERT INTO `prac` (`title`,`body`, `author`) VALUES (?, ?, ?)';
 	//$sql = 'DELETE FROM `prac` WHERE id = ?';
